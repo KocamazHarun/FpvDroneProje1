@@ -1,0 +1,11 @@
+float kp = 1.0, ki = 0.1, kd = 0.05;
+float error, integral, derivative, prevError = 0;
+float pidOutput;
+
+void updatePID(float setpoint, float current) {
+    error = setpoint - current;
+    integral += error;
+    derivative = error - prevError;
+    pidOutput = kp * error + ki * integral + kd * derivative;
+    prevError = error;
+}
