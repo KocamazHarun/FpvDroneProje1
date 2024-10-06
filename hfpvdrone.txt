@@ -1,0 +1,16 @@
+#include <Servo.h>
+
+Servo esc;
+int escPin = 9;  
+// ESC'nin bağlı olduğu pin
+
+void setup() {
+  esc.attach(escPin);
+}
+
+void loop() {
+  int throttle = 1500;  
+  
+  // Motor hızı (1000 - 2000 arasında)
+  esc.writeMicroseconds(throttle);
+}
